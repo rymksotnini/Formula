@@ -1,0 +1,45 @@
+
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg)"></div>
+
+  <div class="container row offset-2" style="padding-top: 200px">
+    <div class="col-md-4">
+      <app-team-list></app-team-list>
+    </div>
+    <div class="col-md-4 offset-1">
+      <h2> CHOSEN TEAMS </h2>
+      <ul *ngFor ="let team of chosenTeams" class="list-group">
+        <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px; cursor: pointer; font-size: medium; font-weight: bold">{{team.name}}</li>
+      </ul>
+      <a [routerLink]="['/','fight']" *ngIf="chosenTeams.length==2" class="btn btn-primary btn-round btn-lg btn-block">START</a>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              Formula
+            </a>
+          </li>
+          <li>
+            <a href="">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy;
+        {{data | date: 'yyyy'}}, organized by
+        <a href="" target="_blank">Auto Club</a>.
+      </div>
+    </div>
+  </footer>
+</div>

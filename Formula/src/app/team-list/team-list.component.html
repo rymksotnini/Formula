@@ -1,0 +1,5 @@
+<h2> TEAMS </h2>
+<ul *ngFor ="let team of teams" class="list-group">
+  <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium; font-weight: bold" (click)="onChoose($event)">{{team.name}}</li>
+</ul>
+

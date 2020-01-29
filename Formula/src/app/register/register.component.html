@@ -1,0 +1,72 @@
+
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg)"></div>
+  <div class="container row offset-2" style="padding-top: 200px">
+    <div class="col-md-4">
+      <div class="card card-login card-plain">
+        <form class="form" method="" action="">
+          <div class="header header-primary text-center">
+            <div>
+              <h2>FORMULA</h2>
+            </div>
+          </div>
+          <div class="content">
+            <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+              <div class="input-group-prepend">
+                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+              </div>
+              <input #teamName type="text" class="form-control" placeholder="Team Name..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
+            </div>
+          </div>
+          <div class="footer text-center">
+            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="register(teamName.value)">Register</a>
+          </div>
+          <div class="pull-left">
+            <h6>
+              <a [routerLink]="['/','teams']" class="link">Get Started</a>
+            </h6>
+          </div>
+          <div class="pull-right">
+            <h6>
+              <a href="#pablo" class="link">Need Help?</a>
+            </h6>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4 offset-1">
+      <h2> TEAMS </h2>
+      <ul *ngFor ="let team of teams" class="list-group">
+        <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium; font-weight: bold">{{team.name}}</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              Formula
+            </a>
+          </li>
+          <li>
+            <a href="">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy;
+        {{data | date: 'yyyy'}}, organized by
+        <a href="" target="_blank">Auto Club</a>.
+      </div>
+    </div>
+  </footer>
+</div>
