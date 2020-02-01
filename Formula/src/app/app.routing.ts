@@ -11,7 +11,9 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import {RegisterComponent} from './register/register.component';
 import {TeamsComponent} from './teams/teams.component';
 import {FightComponent} from './fight/fight.component';
-import {ScoreComponent} from "./score/score.component";
+import {ScoreComponent} from './score/score.component';
+import {WinnerComponent} from './winner/winner.component';
+import {RankingComponent} from './ranking/ranking.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'register', pathMatch: 'full' },
@@ -23,7 +25,9 @@ const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'teams', component: TeamsComponent},
     {path: 'fight', component: FightComponent},
-    {path: 'score', component: ScoreComponent}
+    {path: 'score', component: ScoreComponent},
+    {path: 'winner', component: WinnerComponent},
+    {path: 'ranking', component: RankingComponent}
 ];
 
 @NgModule({

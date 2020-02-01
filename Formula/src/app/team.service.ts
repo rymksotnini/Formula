@@ -50,4 +50,25 @@ export class TeamService {
   getChosenTeam() {
     return this.chosenTeams;
   }
+
+  getChosenTeamWinner () {
+    const maximum = Math.max(this.chosenTeams[0].score, this.chosenTeams[1].score);
+    return this.teams.find( teamFound => maximum === teamFound.score);
+  }
+
+  reinitializeChosenTeam() {
+    this.chosenTeams = [];
+  }
+
+  sortTeams() {
+    this.teams.sort((team1, team2) => {
+          if (team1.score > team2.score) {
+            return -1;
+          } else {
+            return 1;
+          }
+       }
+    );
+    console.log(this.teams);
+  }
 }

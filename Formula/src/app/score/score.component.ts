@@ -26,6 +26,6 @@ export class ScoreComponent implements OnInit {
     this.teamService.setScore(this.teamService.getChosenTeam()[0], + score1);
     this.teamService.setScore(this.teamService.getChosenTeam()[1], + score2);
     console.log(this.teamService.getTeams());
-    this.router.navigate(['/teams']);
+    this.router.navigate(['/winner']);
   }
 }
