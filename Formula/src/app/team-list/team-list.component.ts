@@ -13,8 +13,9 @@ export class TeamListComponent implements OnInit {
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    this.teams = this.teamService.getTeams();
+    this.teams = this.teamService.getTeamsToPickFromRandomly();
   }
+  
   onChoose(value: MouseEvent) {
     const name = value.toElement.innerHTML;
     this.teamService.addToChosenTeams(name);

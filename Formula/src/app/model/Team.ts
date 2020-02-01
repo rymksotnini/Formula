@@ -1,5 +1,6 @@
 export class Team {
     id: number;
     name: string;
-    score: number;
+    racingScore: number;
+    formulaScore: number;
 }

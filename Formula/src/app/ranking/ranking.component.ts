@@ -13,7 +13,7 @@ export class RankingComponent implements OnInit {
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
-    this.teamService.sortTeams();
+    this.teamService.sortTeamsWithFormulaScore();
     this.teams = this.teamService.getTeams();
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TeamService} from "../team.service";
 import {Team} from "../model/Team";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-teams',
@@ -12,7 +13,7 @@ export class TeamsComponent implements OnInit {
   data: Date = new Date();
   focus;
   chosenTeams: Array<Team> = [];
-  constructor(private teamService: TeamService) { }
+  constructor(private teamService: TeamService, private router: Router) { }
 
   ngOnInit() {
     var body = document.getElementsByTagName('body')[0];
@@ -20,10 +21,22 @@ export class TeamsComponent implements OnInit {
 
     var navbar = document.getElementsByTagName('nav')[0];
     navbar.classList.add('navbar-transparent');
-    this.chosenTeams = this.teamService.getChosenTeam();
+    if (this.teamService.getFinalists().length === 2) {
+      this.chosenTeams = this.teamService.getFinalists();
+    } else {
+      this.chosenTeams = this.teamService.getChosenTeam();
+    }
   }
   remove(team: Team) {
     this.teamService.deleteFromChosenTeams(team);
   }
 
+  randomPick() {
+    this.teamService.pickRandomly();
+  }
+
+  setChosenTeamAsFinalists() {
+    this.teamService.setChosenTeamAsFinalists();
+    this.router.navigate(['/fight']);
+  }
 }
