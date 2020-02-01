@@ -22,5 +22,8 @@ export class TeamsComponent implements OnInit {
     navbar.classList.add('navbar-transparent');
     this.chosenTeams = this.teamService.getChosenTeam();
   }
+  remove(team: Team) {
+    this.teamService.deleteFromChosenTeams(team);
+  }
 
 }

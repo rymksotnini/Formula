@@ -9,7 +9,11 @@
     <div class="col-md-4 offset-1">
       <h2> CHOSEN TEAMS </h2>
       <ul *ngFor ="let team of chosenTeams" class="list-group">
-        <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px; cursor: pointer; font-size: medium; font-weight: bold">{{team.name}}</li>
+        <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px; cursor: pointer; font-size: medium; font-weight: bold">{{team.name}}
+          <span class="float-right" style="padding-top: 5px">
+            <i class="now-ui-icons ui-1_simple-remove" style="cursor: pointer" (click)="remove(team)"></i>
+          </span>
+        </li>
       </ul>
       <a [routerLink]="['/','fight']" *ngIf="chosenTeams.length==2" class="btn btn-primary btn-round btn-lg btn-block">START</a>
     </div>

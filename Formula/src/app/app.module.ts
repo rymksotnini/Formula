@@ -14,6 +14,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { TeamListComponent } from './team-list/team-list.component';
 import { FightComponent } from './fight/fight.component';
 import {Ng2FittextModule} from 'ng2-fittext';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import {Ng2FittextModule} from 'ng2-fittext';
         RegisterComponent,
         TeamsComponent,
         TeamListComponent,
-        FightComponent
+        FightComponent,
+        ScoreComponent
     ],
     imports: [
         BrowserAnimationsModule,

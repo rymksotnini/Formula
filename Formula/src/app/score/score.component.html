@@ -1,8 +1,8 @@
 
 <div class="page-header" filter-color="orange">
   <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg)"></div>
-  <div class="container row offset-2" style="padding-top: 200px">
-    <div class="col-md-4">
+  <div class="container">
+    <div class="col-md-4 content-center">
       <div class="card card-login card-plain">
         <form class="form" method="" action="">
           <div class="header header-primary text-center">
@@ -13,36 +13,24 @@
           <div class="content">
             <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
               <div class="input-group-prepend">
-                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                <label *ngIf="teamService.getChosenTeam()[0]" class="input-group-text" style="padding-right:10px">{{teamService.getChosenTeam()[0].name}}</label>
+                <span class="input-group-text"></span>
               </div>
-              <input #teamName type="text" class="form-control" placeholder="Team Name..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
+              <input #score1 type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
+            </div>
+            <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+              <div class="input-group-prepend">
+                <label *ngIf="teamService.getChosenTeam()[1]" class="input-group-text" style="padding-right:10px">{{teamService.getChosenTeam()[1].name}}</label>
+                <span class="input-group-text"></span>
+              </div>
+              <input #score2 type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
             </div>
           </div>
           <div class="footer text-center">
-            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="register(teamName.value)">Register</a>
-          </div>
-          <div class="pull-left">
-            <h6>
-              <a [routerLink]="['/','teams']" class="link">Get Started</a>
-            </h6>
-          </div>
-          <div class="pull-right">
-            <h6>
-              <a href="#pablo" class="link">Need Help?</a>
-            </h6>
+            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="saveScore(score1.value,score2.value)">Done</a>
           </div>
         </form>
       </div>
-    </div>
-    <div class="col-md-4 offset-1">
-      <h2> TEAMS </h2>
-      <ul *ngFor ="let team of teams" class="list-group">
-        <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium; font-weight: bold">{{team.name}}
-          <span class="float-right" style="padding-top: 5px">
-            <i class="now-ui-icons ui-1_simple-remove" style="cursor: pointer" (click)="remove(team)"></i>
-          </span>
-        </li>
-      </ul>
     </div>
   </div>
   <footer class="footer">
@@ -74,3 +62,4 @@
     </div>
   </footer>
 </div>
+

@@ -20,12 +20,28 @@ export class TeamService {
     console.log(this.teams);
   }
 
+  deleteFromTeams(team: Team) {
+    const index = this.teams.indexOf(team, 0);
+    if (index > -1) {
+      this.teams.splice(index, 1);
+    }
+  }
+
+  setScore(team: Team, score: number) {
+    this.teams.find( teamFound => team.id === teamFound.id).score = score;
+  }
   addToChosenTeams(teamName: string) {
     for (let i = 0; i < this.teams.length; i++) {
       if (this.teams[i].name === teamName) {
         this.chosenTeams.push(this.teams[i]);
         break;
       }
+    }
+  }
+  deleteFromChosenTeams(team: Team) {
+    const index = this.chosenTeams.indexOf(team, 0);
+    if (index > -1) {
+      this.chosenTeams.splice(index, 1);
     }
   }
   getTeams() {

@@ -26,4 +26,8 @@ export class RegisterComponent implements OnInit {
     this.teamService.addTeam(teamName);
   }
 
+  remove(team: Team) {
+    this.teamService.deleteFromTeams(team);
+  }
+
 }

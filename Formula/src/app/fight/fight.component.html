@@ -2,41 +2,14 @@
   <div class="page-header-image" style="background-image:url(assets/img/fight_background2.jpg); background-position: center"></div>
   <div class="container row offset-2">
     <div #container2 class="col-md-3" style="width: 100%;padding-top: 200px">
-      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="chosenTeams" [container]="container2" style="font-size: 200px">happu new year{{chosenTeams[0].name | uppercase }}</h1>
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="chosenTeams" [container]="container2" style="font-size: 200px">hellooooo{{chosenTeams[0].name | uppercase }}</h1>
     </div>
     <div class="col-md-5">
     </div>
     <div #container1 class="col-md-3 " style="width: 100%;padding-top: 200px">
-      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="chosenTeams" [container]="container1" style="font-size: 200px">happu new year{{chosenTeams[1].name | uppercase }}</h1>
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="chosenTeams" [container]="container1" style="font-size: 200px">hellooooo{{chosenTeams[1].name | uppercase }}</h1>
     </div>
   </div>
-  <footer class="footer">
-    <div class="container">
-      <nav>
-        <ul>
-          <li>
-            <a href="">
-              Formula
-            </a>
-          </li>
-          <li>
-            <a href="">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="">
-              Blog
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright">
-        &copy;
-        {{data | date: 'yyyy'}}, organized by
-        <a href="" target="_blank">Auto Club</a>.
-      </div>
-    </div>
-  </footer>
+  <a [routerLink]="['/','score']" class="btn btn-success btn-round btn-lg btn-block">FINISH</a>
 </div>
 
