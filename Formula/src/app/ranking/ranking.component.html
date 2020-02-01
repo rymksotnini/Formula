@@ -1,3 +1,15 @@
-<p>
-  ranking works!
-</p>
+<div class="page-header" >
+  <div class="page-header-image" style="background-image:url(assets/img/ranking1.jpg); background-position: center"></div>
+  <div class="container row" style="width: 100%;margin-left: 180px">
+    <div #container2 class="col-md-2" style="width: 100%;padding-top: 200px">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container2" style="font-size: 200px">helooooo{{teams[0].name | uppercase }}</h1>
+    </div>
+    <div #container1 class="col-md-2" style="width: 100%;padding-top: 200px;margin-left: 280px">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container1" style="font-size: 200px">helooooo{{teams[1].name | uppercase }}</h1>
+    </div>
+    <div #container3 class="col-2 " style="width: 100%;padding-top: 200px;margin-left: 270px; margin-right: 0">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container3" style="font-size: 200px">helooooo{{teams[2].name | uppercase }}</h1>
+    </div>
+  </div>
+</div>
+

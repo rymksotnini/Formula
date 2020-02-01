@@ -8,6 +8,7 @@ export class TeamService {
   team: Team;
   teams: Array<Team> = [];
   chosenTeams: Array<Team> = [];
+  finalists: Array<Team> = [];
   id = 0;
   constructor() { }
 
@@ -52,8 +53,11 @@ export class TeamService {
   }
 
   getChosenTeamWinner () {
+    let finalist: Team;
     const maximum = Math.max(this.chosenTeams[0].score, this.chosenTeams[1].score);
-    return this.teams.find( teamFound => maximum === teamFound.score);
+    finalist = this.teams.find( teamFound => maximum === teamFound.score);
+    this.finalists.push(finalist)
+    return finalist;
   }
 
   reinitializeChosenTeam() {

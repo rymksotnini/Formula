@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TeamService} from '../team.service';
+import {Team} from '../model/Team';
 
 @Component({
   selector: 'app-ranking',
@@ -8,10 +9,12 @@ import {TeamService} from '../team.service';
 })
 export class RankingComponent implements OnInit {
 
+  teams: Array<Team> = [];
   constructor(private teamService: TeamService) { }
 
   ngOnInit() {
     this.teamService.sortTeams();
+    this.teams = this.teamService.getTeams();
   }
 
 }
