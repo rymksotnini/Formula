@@ -17,6 +17,12 @@ import {Ng2FittextModule} from 'ng2-fittext';
 import { ScoreComponent } from './score/score.component';
 import { WinnerComponent } from './winner/winner.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { FormulaTeamsComponent } from './formula-teams/formula-teams.component';
+import { TeamPlayingComponent } from './team-playing/team-playing.component';
+import { FormulaScoreComponent } from './formula-score/formula-score.component';
+import { FightFormulaComponent } from './fight-formula/fight-formula.component';
+import { ScoreFinalFormulaComponent } from './score-final-formula/score-final-formula.component';
+import { FormulaWinnerComponent } from './formula-winner/formula-winner.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +34,13 @@ import { RankingComponent } from './ranking/ranking.component';
         FightComponent,
         ScoreComponent,
         WinnerComponent,
-        RankingComponent
+        RankingComponent,
+        FormulaTeamsComponent,
+        TeamPlayingComponent,
+        FormulaScoreComponent,
+        FightFormulaComponent,
+        ScoreFinalFormulaComponent,
+        FormulaWinnerComponent
     ],
     imports: [
         BrowserAnimationsModule,

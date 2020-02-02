@@ -1,12 +1,12 @@
 <h2> TEAMS </h2>
 <div *ngIf="teams.length!=0">
   <ul *ngFor ="let team of teams" class="list-group">
-    <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium" (click)="onChoose($event)">{{team.name}}</li>
+    <li class="list-group-item list-group-item-dark" style="cursor:pointer;margin-bottom: 10px;font-size: medium" (click)="onChoose(team)">{{team.name}}</li>
   </ul>
 </div>
 <div *ngIf="teamService.getFinalists().length==2">
   <ul *ngFor ="let team of teamService.getFinalists()" class="list-group">
-    <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium" (click)="onChoose($event)">{{team.name}}</li>
+    <li class="list-group-item list-group-item-dark" style="margin-bottom: 10px;font-size: medium" (click)="onChoose(team)">{{team.name}}</li>
   </ul>
 </div>
 

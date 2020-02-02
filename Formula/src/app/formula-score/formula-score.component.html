@@ -7,7 +7,7 @@
         <form class="form" method="" action="">
           <div class="header header-primary text-center">
             <div>
-              <h2>Racing</h2>
+              <h2>FORMULA</h2>
             </div>
           </div>
           <div class="content">
@@ -16,18 +16,11 @@
                 <label *ngIf="teamService.getChosenTeam()[0]" class="input-group-text" style="padding-right:10px">{{teamService.getChosenTeam()[0].name}}</label>
                 <span class="input-group-text"></span>
               </div>
-              <input #score1 type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
-            </div>
-            <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
-              <div class="input-group-prepend">
-                <label *ngIf="teamService.getChosenTeam()[1]" class="input-group-text" style="padding-right:10px">{{teamService.getChosenTeam()[1].name}}</label>
-                <span class="input-group-text"></span>
-              </div>
-              <input #score2 type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
+              <input #score type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
             </div>
           </div>
           <div class="footer text-center">
-            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="saveScore(score1.value,score2.value)">Done</a>
+            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="saveScore(score.value)">Done</a>
           </div>
         </form>
       </div>

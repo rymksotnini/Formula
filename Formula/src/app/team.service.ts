@@ -40,13 +40,12 @@ export class TeamService {
   setRacingScore(team: Team, score: number) {
     this.teams.find( teamFound => team.id === teamFound.id).racingScore = score;
   }
-  addToChosenTeams(teamName: string) {
-    for (let i = 0; i < this.teams.length; i++) {
-      if (this.teams[i].name === teamName) {
-        this.chosenTeams.push(this.teams[i]);
-        break;
-      }
-    }
+
+  setFormulaScore(team: Team, score: number) {
+    this.teams.find( teamFound => team.id === teamFound.id).formulaScore = score;
+  }
+  addToChosenTeams(team: Team) {
+    this.chosenTeams.push(team);
   }
   deleteFromChosenTeams(team: Team) {
     const index = this.chosenTeams.indexOf(team, 0);
@@ -70,6 +69,13 @@ export class TeamService {
     let finalist: Team;
     const maximum = Math.max(this.chosenTeams[0].racingScore, this.chosenTeams[1].racingScore);
     finalist = this.teams.find( teamFound => maximum === teamFound.racingScore);
+    return finalist;
+  }
+
+  getChosenFormulaTeamWinner () {
+    let finalist: Team;
+    const maximum = Math.max(this.chosenTeams[0].formulaScore, this.chosenTeams[1].formulaScore);
+    finalist = this.teams.find( teamFound => maximum === teamFound.formulaScore);
     return finalist;
   }
 
