@@ -48,11 +48,14 @@ export class TeamService {
     this.chosenTeams.push(team);
   }
   deleteFromChosenTeams(team: Team) {
-    const index = this.chosenTeams.indexOf(team, 0);
+    let index = this.chosenTeams.indexOf(team, 0);
     if (index > -1) {
       this.chosenTeams.splice(index, 1);
     }
-    this.teamsToPickFromRandomly.push(team);
+    index = this.teamsToPickFromRandomly.indexOf(team, 0);
+    if (index === -1) {
+      this.teamsToPickFromRandomly.push(team);
+    }
   }
 
   getFinalists() {

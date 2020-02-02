@@ -1,11 +1,11 @@
 
-<div class="page-header" filter-color="orange">
-  <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg)"></div>
+<div class="page-header" filter-color="">
+  <div class="page-header-image" style="background-image:url(assets/img/car_background2.jpg)"></div>
 
   <div class="container row offset-2" style="padding-top: 200px">
     <div class="col-md-4">
       <app-team-list></app-team-list>
-      <a *ngIf="teamService.getTeamsToPickFromRandomly().length!=0" class="btn btn-primary btn-round col-md-5" (click)="randomPick()"><i class="now-ui-icons loader_refresh float-left"></i>random pick</a>
+      <a *ngIf="teamService.getTeamsToPickFromRandomly().length!=0 && teamService.getChosenTeam().length==0" class="btn btn-primary btn-round col-md-5" (click)="randomPick()"><i class="now-ui-icons loader_refresh float-left"></i>random pick</a>
     </div>
     <div class="col-md-4 offset-1">
       <h2> CHOSEN TEAMS </h2>
