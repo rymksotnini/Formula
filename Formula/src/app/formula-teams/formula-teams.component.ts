@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {TeamService} from "../team.service";
 import {Team} from "../model/Team";
+import {TeamService} from "../team.service";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-teams',
-  templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.scss']
+  selector: 'app-formula-teams',
+  templateUrl: './formula-teams.component.html',
+  styleUrls: ['./formula-teams.component.scss']
 })
-export class TeamsComponent implements OnInit {
+export class FormulaTeamsComponent implements OnInit {
 
   data: Date = new Date();
   focus;
@@ -31,12 +31,4 @@ export class TeamsComponent implements OnInit {
     this.teamService.deleteFromChosenTeams(team);
   }
 
-  randomPick() {
-    this.teamService.pickRandomly();
-  }
-
-  setChosenTeamAsFinalists() {
-    this.teamService.setChosenTeamAsFinalists();
-    this.router.navigate(['/fight']);
-  }
 }

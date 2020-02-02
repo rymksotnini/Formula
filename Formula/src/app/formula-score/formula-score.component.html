@@ -1,0 +1,58 @@
+
+<div class="page-header" filter-color="orange">
+  <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg)"></div>
+  <div class="container">
+    <div class="col-md-4 content-center">
+      <div class="card card-login card-plain">
+        <form class="form" method="" action="">
+          <div class="header header-primary text-center">
+            <div>
+              <h2>FORMULA</h2>
+            </div>
+          </div>
+          <div class="content">
+            <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+              <div class="input-group-prepend">
+                <label *ngIf="teamService.getChosenTeam()[0]" class="input-group-text" style="padding-right:10px">{{teamService.getChosenTeam()[0].name}}</label>
+                <span class="input-group-text"></span>
+              </div>
+              <input #score type="text" class="form-control" placeholder="Team score..." style="padding-bottom: 30px;padding-top: 30px" (focus)="focus=true" (blur)="focus=false" >
+            </div>
+          </div>
+          <div class="footer text-center">
+            <a class="btn btn-primary btn-round btn-lg btn-block" (click)="saveScore(score.value)">Done</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              Formula
+            </a>
+          </li>
+          <li>
+            <a href="">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright">
+        &copy;
+        {{data | date: 'yyyy'}}, organized by
+        <a href="" target="_blank">Auto Club</a>.
+      </div>
+    </div>
+  </footer>
+</div>
+

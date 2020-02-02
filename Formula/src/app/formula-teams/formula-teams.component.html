@@ -5,10 +5,9 @@
   <div class="container row offset-2" style="padding-top: 200px">
     <div class="col-md-4">
       <app-team-list></app-team-list>
-      <a *ngIf="teamService.getTeamsToPickFromRandomly().length!=0" class="btn btn-primary btn-round col-md-5" (click)="randomPick()"><i class="now-ui-icons loader_refresh float-left"></i>random pick</a>
     </div>
     <div class="col-md-4 offset-1">
-      <h2> CHOSEN TEAMS </h2>
+      <h2> CHOSEN TEAM </h2>
       <ul *ngFor ="let team of chosenTeams" class="list-group">
         <li class="list-group-item list-group-item-warning" style="margin-bottom: 10px; cursor: pointer; font-size: medium">{{team.name}}
           <span class="float-right" style="padding-top: 5px">
@@ -16,8 +15,7 @@
           </span>
         </li>
       </ul>
-      <a [routerLink]="['/','fight']" *ngIf="chosenTeams.length==2 && teamService.getFinalists().length!=2" class="btn btn-primary btn-round col-md-4"><i class="now-ui-icons media-1_button-play float-left"></i>START</a>
-      <a *ngIf="teamService.getFinalists().length==2" class="btn btn-success btn-round btn-block" (click)="setChosenTeamAsFinalists()"><i class="now-ui-icons media-1_button-play float-left"></i>FINAL MATCH</a>
+      <a [routerLink]="['/','team-playing']" *ngIf="chosenTeams.length==1" class="btn btn-primary btn-round col-md-4"><i class="now-ui-icons media-1_button-play float-left"></i>START</a>
     </div>
   </div>
   <footer class="footer">

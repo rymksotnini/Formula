@@ -1,0 +1,28 @@
+<!--<div class="page-header" >
+  <div class="page-header-image" style="background-image:url(assets/img/ranking1.jpg); background-position: center"></div>
+  <div class="container row" style="width: 100%;margin-left: 180px">
+    <div #container2 class="col-md-2" style="width: 100%;padding-top: 200px">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container2" style="font-size: 200px">helooooo{{teams[0].name | uppercase }}</h1>
+    </div>
+    <div #container1 class="col-md-2" style="width: 100%;padding-top: 200px;margin-left: 280px">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container1" style="font-size: 200px">helooooo{{teams[1].name | uppercase }}</h1>
+    </div>
+    <div #container3 class="col-2 " style="width: 100%;padding-top: 200px;margin-left: 270px; margin-right: 0">
+      <h1 [fittext]="true" [activateOnInputEvents]="false" [modelToWatch]="teams" [container]="container3" style="font-size: 200px">helooooo{{teams[2].name | uppercase }}</h1>
+    </div>
+  </div>
+</div>-->
+<div class="page-header">
+  <div class="page-header-image" style="background-image:url(assets/img/car_background.jpg); background-position: center"></div>
+  <div class="container" style="padding-top: 200px;padding-left: 300px">
+    <div class="progress-container rounded progress-warning col-md-8" style="padding-top: 10px;background: rgba(50,50,50,0.48);">
+      <div *ngFor="let team of this.teams; let i = index" style="margin-bottom: 40px;margin-right: 10px">
+        <span *ngIf="i==0" class="progress-badge"><i class="fas fa-crown" style="margin-right: 10px"></i>{{team.name}}</span>
+        <span *ngIf="i!=0" class="progress-badge">{{team.name}}</span>
+        <ngb-progressbar height="20px" [max]="460" [animated]="true" [striped]="true" [value]="team.formulaScore">{{round(team.formulaScore/460*100)}}%</ngb-progressbar><br>
+      </div>
+      <a class="btn btn-success btn-round col-md-4" (click)="addFinalistsToChosenTeams()"><i class="now-ui-icons media-1_button-play float-left"></i>FINAL MATCH</a>
+    </div>
+  </div>
+</div>
+
